@@ -35,25 +35,27 @@ export default function Testimonials() {
         <div className="bg-white border border-gold-hairline/40 shadow-luxury p-8 sm:p-12 lg:p-16 relative">
           <Quote className="w-16 h-16 text-saffron/15 absolute top-6 right-8 pointer-events-none" />
 
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            {/* Avatar & Guest Details */}
-            <div className="flex-shrink-0 text-center lg:text-left flex flex-col items-center lg:items-start">
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-none border-2 border-gold-hairline overflow-hidden shadow-md mb-4">
-                <img
-                  src={current.avatar}
-                  alt={current.name}
-                  className="w-full h-full object-cover"
-                />
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+            {/* Guest Details */}
+            <div className="flex-shrink-0 text-center lg:text-left flex flex-col items-center lg:items-start lg:w-60">
+              <div className="w-12 h-12 bg-mountain-blue text-cream border border-gold-hairline flex items-center justify-center font-display font-bold text-sm tracking-wider mb-3 shadow-sm">
+                {current.name
+                  .replace(/^(Dr\.|Col\.)\s*/i, '')
+                  .split(' ')
+                  .filter((n) => n && n !== '&')
+                  .slice(0, 2)
+                  .map((n) => n[0])
+                  .join('')}
               </div>
 
               <h4 className="font-display text-lg font-bold text-mountain-blue">
                 {current.name}
               </h4>
-              <p className="text-xs text-charcoal-muted font-medium">
+              <p className="text-xs text-charcoal-muted font-medium mt-0.5">
                 {current.location}
               </p>
 
-              <div className="mt-2 inline-flex items-center space-x-1 px-2.5 py-1 bg-cream border border-gold-hairline/30 text-[10px] text-mountain-blue font-semibold uppercase tracking-wider">
+              <div className="mt-3 inline-flex items-center space-x-1 px-2.5 py-1 bg-cream border border-gold-hairline/30 text-[10px] text-mountain-blue font-semibold uppercase tracking-wider">
                 <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                 <span>Verified Traveler</span>
               </div>

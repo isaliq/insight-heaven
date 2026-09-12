@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, Heart, ShieldCheck, Users, Award, MapPin, ArrowRight } from 'lucide-react';
+import { Compass, Heart, ShieldCheck, Award, MapPin } from 'lucide-react';
 import CTASection from '../components/CTASection';
 import { BRAND } from '../constants/contact';
 
@@ -29,27 +29,6 @@ export default function About({ onOpenEnquiry }) {
       title: 'Uncompromised Safety & Care',
       description:
         'With deep knowledge of Himalayan mountain passes, changing weather patterns, and local administration, we provide absolute peace of mind 24 hours a day.',
-    },
-  ];
-
-  const team = [
-    {
-      name: 'Tariq Ahmad Mir',
-      role: 'Founder & Senior Valley Concierge',
-      bio: 'Born beside Dal Lake, Tariq has spent over 14 years introducing international travelers and families to the hidden glades of Kashmir.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
-    },
-    {
-      name: 'Zahoor Rather',
-      role: 'Head of High-Altitude & Ski Expeditions',
-      bio: 'Certified mountaineer and native of Gulmarg, Zahoor coordinates winter backcountry skiing and high-altitude Gurez expeditions.',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop',
-    },
-    {
-      name: 'Shabnam Begum',
-      role: 'Guest Hospitality & Heritage Specialist',
-      bio: 'Passionate about Kashmiri culinary heritage and traditional craftsmanship, Shabnam curates authentic Wazwan dining and boutique stays.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop',
     },
   ];
 
@@ -233,49 +212,6 @@ export default function About({ onOpenEnquiry }) {
               </div>
             );
           })}
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 sm:py-24 bg-cream-50 border-t border-gold-hairline/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="eyebrow-label text-saffron block mb-2">Our Srinagar Hosts</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-mountain-blue">
-              Meet Your Valley Curators
-            </h2>
-            <div className="w-16 h-0.5 bg-gold-hairline mx-auto mt-3 mb-4" />
-            <p className="text-xs sm:text-sm text-charcoal-muted font-light">
-              The people who know every turn of the Lidder River, every snow trail on Apharwat, and every artisan woodcarver in the old city.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, idx) => (
-              <div key={idx} className="bg-white border border-gold-hairline/30 shadow-luxury overflow-hidden flex flex-col">
-                <div className="aspect-[4/3] overflow-hidden bg-mountain-blue-deep">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-eyebrow text-saffron block mb-1">
-                      {member.role}
-                    </span>
-                    <h3 className="font-display text-xl font-bold text-mountain-blue mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-xs text-charcoal-muted leading-relaxed">
-                      {member.bio}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
