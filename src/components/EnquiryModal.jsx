@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Send, MessageCircle, CheckCircle2, Calendar, Users, Phone, User, MapPin } from 'lucide-react';
-import { PHONE_NUMBER, getWhatsAppLink } from '../constants/contact';
+import { PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, PHONE_TEL_2, getWhatsAppLink } from '../constants/contact';
 import { PACKAGES } from '../data/packages';
 
 export default function EnquiryModal({ isOpen, onClose, preselectedPackageId }) {
@@ -240,8 +240,12 @@ export default function EnquiryModal({ isOpen, onClose, preselectedPackageId }) 
 
               <p className="text-[11px] text-charcoal-subtle text-center pt-1">
                 Prefer to talk now? Call us directly at{' '}
-                <a href={`tel:+917051933349`} className="text-saffron font-semibold underline">
+                <a href={PHONE_TEL} className="text-saffron font-semibold underline">
                   {PHONE_NUMBER}
+                </a>{' '}
+                or{' '}
+                <a href={PHONE_TEL_2} className="text-saffron font-semibold underline">
+                  {PHONE_NUMBER_2}
                 </a>
               </p>
             </form>

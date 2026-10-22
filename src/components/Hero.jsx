@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Sparkles, Phone, ArrowRight, ShieldCheck, MessageCircle } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_TEL, BRAND, getWhatsAppLink } from '../constants/contact';
+import { PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, PHONE_TEL_2, BRAND, getWhatsAppLink } from '../constants/contact';
 
 export default function Hero({ onOpenEnquiry }) {
   return (
@@ -60,14 +60,26 @@ export default function Hero({ onOpenEnquiry }) {
             <span>View Packages</span>
           </Link>
 
-          <a
-            href={PHONE_TEL}
-            id="hero-phone-direct-cta"
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-4 bg-transparent text-cream/90 hover:text-saffron text-xs uppercase tracking-widest font-semibold transition-all duration-300"
-          >
-            <Phone className="w-3.5 h-3.5 text-saffron fill-current" />
-            <span>{PHONE_NUMBER}</span>
-          </a>
+          <div className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-4 bg-transparent text-cream/90 text-xs uppercase tracking-widest font-semibold border border-transparent hover:border-gold-hairline/30 transition-all duration-300">
+            <Phone className="w-3.5 h-3.5 text-saffron fill-current flex-shrink-0" />
+            <a
+              href={PHONE_TEL}
+              id="hero-phone-direct-cta"
+              className="hover:text-saffron transition-colors"
+              title={`Call Primary: ${PHONE_NUMBER}`}
+            >
+              {PHONE_NUMBER}
+            </a>
+            <span className="text-gold-hairline/60">/</span>
+            <a
+              href={PHONE_TEL_2}
+              id="hero-phone-direct-cta-2"
+              className="hover:text-saffron transition-colors"
+              title={`Call Alternate: ${PHONE_NUMBER_2}`}
+            >
+              {PHONE_NUMBER_2}
+            </a>
+          </div>
         </div>
 
         {/* Subtle trust badge below hero */}

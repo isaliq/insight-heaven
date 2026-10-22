@@ -16,6 +16,15 @@ export const PHONE_RAW = '917051933349';
 export const PHONE_NUMBER = '+91 70519 33349';
 export const PHONE_TEL = 'tel:+917051933349';
 
+export const PHONE_RAW_2 = '919797933349';
+export const PHONE_NUMBER_2 = '+91 97979 33349';
+export const PHONE_TEL_2 = 'tel:+919797933349';
+
+export const PHONE_NUMBERS = [
+  { raw: PHONE_RAW, display: PHONE_NUMBER, tel: PHONE_TEL, label: 'Primary' },
+  { raw: PHONE_RAW_2, display: PHONE_NUMBER_2, tel: PHONE_TEL_2, label: 'Alternate' },
+];
+
 export const EMAIL_ADDRESS = 'insightheavens@gmail.com';
 export const EMAIL_MAILTO = 'mailto:insightheavens@gmail.com';
 

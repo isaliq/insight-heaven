@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, Users, MapPin, MessageCircle, Phone } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_TEL, getWhatsAppLink } from '../constants/contact';
+import { PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, getWhatsAppLink } from '../constants/contact';
 
 export default function TrustBar() {
   const stats = [
@@ -61,7 +61,11 @@ export default function TrustBar() {
                         WhatsApp
                       </a>
                       <span className="text-charcoal-subtle">|</span>
-                      <a href={PHONE_TEL} className="text-mountain-blue font-semibold hover:underline">
+                      <a
+                        href={PHONE_TEL}
+                        title={`Call: ${PHONE_NUMBER} or ${PHONE_NUMBER_2}`}
+                        className="text-mountain-blue font-semibold hover:underline"
+                      >
                         Call
                       </a>
                     </div>

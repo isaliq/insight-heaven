@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
-import { getWhatsAppLink, PHONE_NUMBER } from '../constants/contact';
+import { getWhatsAppLink, PHONE_NUMBER, PHONE_NUMBER_2 } from '../constants/contact';
 
 export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(true);
@@ -42,7 +42,7 @@ export default function WhatsAppButton() {
         id="whatsapp-floating-cta"
         className="relative flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/80 group-hover:shadow-[0_0_25px_rgba(37,211,102,0.6)]"
         aria-label="Chat with Insight Heaven on WhatsApp"
-        title="Chat on WhatsApp: +91 70519 33349"
+        title={`Chat on WhatsApp / Call: ${PHONE_NUMBER} | ${PHONE_NUMBER_2}`}
       >
         {/* Subtle pulsating outer ring */}
         <span className="absolute -inset-1 rounded-full bg-[#25D366]/30 animate-ping pointer-events-none opacity-75" />

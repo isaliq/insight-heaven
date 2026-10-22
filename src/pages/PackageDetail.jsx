@@ -17,7 +17,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { PACKAGES } from '../data/packages';
-import { PHONE_NUMBER, PHONE_TEL, getWhatsAppLink } from '../constants/contact';
+import { PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, PHONE_TEL_2, getWhatsAppLink } from '../constants/contact';
 import CTASection from '../components/CTASection';
 
 export default function PackageDetail({ onOpenEnquiry }) {
@@ -322,14 +322,25 @@ export default function PackageDetail({ onOpenEnquiry }) {
                   <span>Enquire / Book on WhatsApp</span>
                 </a>
 
-                {/* Direct Phone Call */}
-                <a
-                  href={PHONE_TEL}
-                  className="w-full py-3.5 bg-mountain-blue text-cream text-xs uppercase tracking-widest font-semibold hover:bg-mountain-blue-dark transition-all duration-300 flex items-center justify-center space-x-2 border border-gold-hairline/40"
-                >
-                  <Phone className="w-4 h-4 text-saffron fill-current" />
-                  <span>Call {PHONE_NUMBER}</span>
-                </a>
+                {/* Direct Phone Call Buttons */}
+                <div className="grid grid-cols-1 gap-2">
+                  <a
+                    href={PHONE_TEL}
+                    className="w-full py-3 bg-mountain-blue text-cream text-xs uppercase tracking-wider font-semibold hover:bg-mountain-blue-dark transition-all duration-300 flex items-center justify-center space-x-2 border border-gold-hairline/40"
+                    title={`Call Primary: ${PHONE_NUMBER}`}
+                  >
+                    <Phone className="w-3.5 h-3.5 text-saffron fill-current" />
+                    <span>Call {PHONE_NUMBER}</span>
+                  </a>
+                  <a
+                    href={PHONE_TEL_2}
+                    className="w-full py-3 bg-mountain-blue text-cream text-xs uppercase tracking-wider font-semibold hover:bg-mountain-blue-dark transition-all duration-300 flex items-center justify-center space-x-2 border border-gold-hairline/40"
+                    title={`Call Alternate: ${PHONE_NUMBER_2}`}
+                  >
+                    <Phone className="w-3.5 h-3.5 text-saffron fill-current" />
+                    <span>Call {PHONE_NUMBER_2}</span>
+                  </a>
+                </div>
               </div>
 
               {/* Guarantees */}

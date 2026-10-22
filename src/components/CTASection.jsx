@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, MessageCircle, Calendar, Sparkles } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_TEL, getWhatsAppLink } from '../constants/contact';
+import { PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, PHONE_TEL_2, getWhatsAppLink } from '../constants/contact';
 
 export default function CTASection({ onOpenEnquiry }) {
   return (
@@ -35,14 +35,23 @@ export default function CTASection({ onOpenEnquiry }) {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          {/* Clickable tel link */}
+          {/* Clickable tel links for both numbers */}
           <a
             href={PHONE_TEL}
             id="cta-banner-phone"
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-8 py-4 bg-saffron text-white text-xs uppercase tracking-widest font-semibold hover:bg-saffron-dark transition-all duration-300 shadow-2xl hover:shadow-[0_0_25px_rgba(217,142,58,0.5)] border border-gold-hairline/40 hover:-translate-y-0.5"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-6 py-4 bg-saffron text-white text-xs uppercase tracking-widest font-semibold hover:bg-saffron-dark transition-all duration-300 shadow-2xl hover:shadow-[0_0_25px_rgba(217,142,58,0.5)] border border-gold-hairline/40 hover:-translate-y-0.5"
           >
             <Phone className="w-4 h-4 fill-current" />
             <span>Call {PHONE_NUMBER}</span>
+          </a>
+
+          <a
+            href={PHONE_TEL_2}
+            id="cta-banner-phone-2"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-6 py-4 bg-mountain-blue-deep text-cream text-xs uppercase tracking-widest font-semibold hover:bg-mountain-blue-dark transition-all duration-300 shadow-2xl border border-gold-hairline/50 hover:-translate-y-0.5"
+          >
+            <Phone className="w-4 h-4 text-saffron fill-current" />
+            <span>Call {PHONE_NUMBER_2}</span>
           </a>
 
           {/* Clickable WhatsApp link */}

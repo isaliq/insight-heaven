@@ -16,6 +16,8 @@ import {
   BRAND,
   PHONE_NUMBER,
   PHONE_TEL,
+  PHONE_NUMBER_2,
+  PHONE_TEL_2,
   EMAIL_ADDRESS,
   EMAIL_MAILTO,
   getWhatsAppLink,
@@ -102,7 +104,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              {/* Click to Call CTA */}
+              {/* Click to Call CTA — Primary */}
               <div className="p-4 bg-cream-50 border border-gold-hairline/40 flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-mountain-blue text-saffron flex items-center justify-center">
@@ -110,12 +112,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <span className="text-[10px] uppercase font-bold tracking-wider text-charcoal-subtle block">
-                      Direct Telephone
+                      Direct Telephone (Primary)
                     </span>
                     <a
                       href={PHONE_TEL}
                       id="contact-page-call"
-                      className="font-display text-lg font-bold text-mountain-blue hover:text-saffron transition-colors"
+                      className="font-display text-base sm:text-lg font-bold text-mountain-blue hover:text-saffron transition-colors"
                     >
                       {PHONE_NUMBER}
                     </a>
@@ -123,6 +125,33 @@ export default function Contact() {
                 </div>
                 <a
                   href={PHONE_TEL}
+                  className="px-3.5 py-1.5 bg-mountain-blue text-cream text-[11px] uppercase tracking-wider font-semibold hover:bg-mountain-blue-dark transition-all"
+                >
+                  Call
+                </a>
+              </div>
+
+              {/* Click to Call CTA — Alternate */}
+              <div className="p-4 bg-cream-50 border border-gold-hairline/40 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-mountain-blue text-saffron flex items-center justify-center">
+                    <Phone className="w-5 h-5 fill-current" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-charcoal-subtle block">
+                      Direct Telephone (Alternate)
+                    </span>
+                    <a
+                      href={PHONE_TEL_2}
+                      id="contact-page-call-2"
+                      className="font-display text-base sm:text-lg font-bold text-mountain-blue hover:text-saffron transition-colors"
+                    >
+                      {PHONE_NUMBER_2}
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href={PHONE_TEL_2}
                   className="px-3.5 py-1.5 bg-mountain-blue text-cream text-[11px] uppercase tracking-wider font-semibold hover:bg-mountain-blue-dark transition-all"
                 >
                   Call

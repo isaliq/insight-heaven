@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, Phone, Mail, MapPin, MessageCircle, Heart, ArrowUp, ShieldCheck } from 'lucide-react';
 import InstagramIcon from './icons/InstagramIcon';
-import { BRAND, PHONE_NUMBER, PHONE_TEL, EMAIL_ADDRESS, EMAIL_MAILTO, getWhatsAppLink, INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../constants/contact';
+import { BRAND, PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, PHONE_TEL_2, EMAIL_ADDRESS, EMAIL_MAILTO, getWhatsAppLink, INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../constants/contact';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -68,6 +68,7 @@ export default function Footer() {
                 href={PHONE_TEL}
                 className="w-9 h-9 rounded-none border border-gold-hairline/40 flex items-center justify-center text-cream/80 hover:text-saffron hover:border-saffron transition-all duration-300"
                 aria-label="Call Direct"
+                title={`Call: ${PHONE_NUMBER} or ${PHONE_NUMBER_2}`}
               >
                 <Phone className="w-4 h-4" />
               </a>
@@ -162,14 +163,22 @@ export default function Footer() {
                 </span>
               </div>
 
-              <div className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-saffron flex-shrink-0" />
-                <a
-                  href={PHONE_TEL}
-                  className="text-cream font-medium hover:text-saffron transition-colors duration-200 text-sm tracking-wide"
-                >
-                  {PHONE_NUMBER}
-                </a>
+              <div className="flex items-start space-x-3">
+                <Phone className="w-4 h-4 text-saffron flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col space-y-1">
+                  <a
+                    href={PHONE_TEL}
+                    className="text-cream font-medium hover:text-saffron transition-colors duration-200 text-sm tracking-wide"
+                  >
+                    {PHONE_NUMBER}
+                  </a>
+                  <a
+                    href={PHONE_TEL_2}
+                    className="text-cream font-medium hover:text-saffron transition-colors duration-200 text-sm tracking-wide"
+                  >
+                    {PHONE_NUMBER_2}
+                  </a>
+                </div>
               </div>
 
               <div className="flex items-center space-x-3">

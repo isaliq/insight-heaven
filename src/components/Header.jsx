@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, Compass, ChevronRight, MessageCircle } from 'lucide-react';
 import InstagramIcon from './icons/InstagramIcon';
-import { BRAND, PHONE_NUMBER, PHONE_TEL, getWhatsAppLink, INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../constants/contact';
+import { BRAND, PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, PHONE_TEL_2, getWhatsAppLink, INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../constants/contact';
 
 export default function Header({ onOpenEnquiry }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -107,15 +107,38 @@ export default function Header({ onOpenEnquiry }) {
               <InstagramIcon className="w-4 h-4 stroke-[1.8]" />
             </a>
 
-            <a
-              href={PHONE_TEL}
-              id="header-phone-cta"
-              className="inline-flex items-center space-x-2 px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-none bg-mountain-blue text-cream hover:bg-mountain-blue-dark border border-gold-hairline/40 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
-              title="Call Insight Heavens"
-            >
-              <Phone className="w-3.5 h-3.5 text-saffron fill-current" />
-              <span>{PHONE_NUMBER}</span>
-            </a>
+            <div className="relative group">
+              <a
+                href={PHONE_TEL}
+                id="header-phone-cta"
+                className="inline-flex items-center space-x-2 px-3.5 py-2 text-xs uppercase tracking-wider font-semibold rounded-none bg-mountain-blue text-cream hover:bg-mountain-blue-dark border border-gold-hairline/40 shadow-sm transition-all duration-300 hover:shadow-md"
+                title={`Call ${PHONE_NUMBER} or ${PHONE_NUMBER_2}`}
+              >
+                <Phone className="w-3.5 h-3.5 text-saffron fill-current" />
+                <span>{PHONE_NUMBER}</span>
+              </a>
+              <div className="absolute right-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 min-w-[200px]">
+                <div className="bg-mountain-blue-deep border border-gold-hairline/60 shadow-2xl p-1.5 flex flex-col space-y-1">
+                  <div className="text-[10px] uppercase font-bold tracking-wider text-gold-hairline px-2 py-1">
+                    Call Direct (24x7)
+                  </div>
+                  <a
+                    href={PHONE_TEL}
+                    className="flex items-center space-x-2 px-2.5 py-1.5 text-xs text-cream hover:text-saffron hover:bg-mountain-blue transition-colors font-medium"
+                  >
+                    <Phone className="w-3 h-3 text-saffron fill-current flex-shrink-0" />
+                    <span>{PHONE_NUMBER}</span>
+                  </a>
+                  <a
+                    href={PHONE_TEL_2}
+                    className="flex items-center space-x-2 px-2.5 py-1.5 text-xs text-cream hover:text-saffron hover:bg-mountain-blue transition-colors font-medium"
+                  >
+                    <Phone className="w-3 h-3 text-saffron fill-current flex-shrink-0" />
+                    <span>{PHONE_NUMBER_2}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
 
             <a
               href={getWhatsAppLink("Hi Insight Heavens! I would like to plan a Kashmir trip. Please share package details and customized quote.")}
@@ -191,13 +214,21 @@ export default function Header({ onOpenEnquiry }) {
               );
             })}
 
-            <div className="pt-4 border-t border-gold-hairline/20 flex flex-col space-y-3">
+            <div className="pt-4 border-t border-gold-hairline/20 flex flex-col space-y-2.5">
               <a
                 href={PHONE_TEL}
-                className="w-full flex items-center justify-center space-x-2 py-3 bg-mountain-blue text-cream text-xs uppercase tracking-wider font-semibold border border-gold-hairline/40"
+                className="w-full flex items-center justify-center space-x-2 py-2.5 bg-mountain-blue text-cream text-xs uppercase tracking-wider font-semibold border border-gold-hairline/40"
               >
                 <Phone className="w-4 h-4 text-saffron fill-current" />
                 <span>Call {PHONE_NUMBER}</span>
+              </a>
+
+              <a
+                href={PHONE_TEL_2}
+                className="w-full flex items-center justify-center space-x-2 py-2.5 bg-mountain-blue text-cream text-xs uppercase tracking-wider font-semibold border border-gold-hairline/40"
+              >
+                <Phone className="w-4 h-4 text-saffron fill-current" />
+                <span>Call {PHONE_NUMBER_2}</span>
               </a>
 
               <a
